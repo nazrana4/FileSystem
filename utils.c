@@ -47,8 +47,10 @@ unsigned char* convShiftUnIntToByteArr(unsigned int Integer, unsigned char *leng
                 count -=1;
         }
 
+	// setting the actual length of the binary sequence
         *length = count;
     
+	// returning the pointer to the byte array
         int byteRequired = (unsigned int) ceil( (double) count/(double) 8); 
         unsigned char *out = malloc(byteRequired);
     
