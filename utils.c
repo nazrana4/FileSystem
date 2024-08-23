@@ -37,3 +37,25 @@ unsigned int convertByteArrToUnInt(unsigned char *arr){
 	printf("%d ",number);
 	return number;
 }
+
+unsigned char* convShiftUnIntToByteArr(unsigned int Integer, unsigned char *length){
+        int count = sizeof(unsigned int) * 8;
+    
+        // calculating count of actual bits and shifting msb to 1
+        while((myPow(2, (sizeof(unsigned int) * 8)-1) & Integer ) == 0){ 
+                Integer = Integer << 1;
+                count -=1;
+        }
+
+        *length = count;
+    
+        int byteRequired = (unsigned int) ceil( (double) count/(double) 8); 
+        unsigned char *out = malloc(byteRequired);
+    
+        for(int i=0;i<byteRequired; i++){
+                out[i] = (unsigned char) (Integer >> ((3-i) * 8)) & 0xFF;
+        }
+    
+        return out;
+}
+

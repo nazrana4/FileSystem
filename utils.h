@@ -5,6 +5,8 @@ int getbit(unsigned char *,unsigned int);
 void setbit(unsigned char *,unsigned int, int);
 unsigned char* convertUnIntToByteArr(unsigned int,unsigned char *);
 unsigned int convertByteArrToUnInt(unsigned char *);
+unsigned char* convertShiftUnIntToByteArr(unsigned int,int *);
+
 unsigned int myPow(unsigned int,unsigned int);
 
 
