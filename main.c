@@ -18,7 +18,7 @@ void testFile(FILE *vdFP){
 int main(){
 	
 	FILE* vdfp = createvd(1024*4);	
-	testFile(vdfp);
+//	testFile(vdfp);
 	fseek(vdfp,0,SEEK_SET);	
 	addfile(vdfp,"example.txt");
 	fseek(vdfp,0,SEEK_SET);	
